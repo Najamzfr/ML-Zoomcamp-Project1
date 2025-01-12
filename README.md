@@ -4,6 +4,9 @@ This project is a machine learning-based loan approval classification system. It
 
 The project is deployed as a REST API using Flask, allowing users to send loan application data and receive a prediction.
 
+The Dataset used in this project is obtained from  `kaggle` click the link  ->  
+[Data Source](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data)
+
 ---
 
 ## Project Structure
@@ -23,7 +26,7 @@ loan_prediction/
 ├── train.py                        # Script to train the model
 ├── run.py                          # Script to run the Flask app
 └── README.md                       # Project documentation
-
+```
 ---
 
 ## Prerequisites
@@ -39,7 +42,7 @@ Before running the project, ensure you have the following installed:
 
 ### 1. Clone the Repository
 
-```bash
+
 git clone https://github.com/your-username/loan-approval-classification.git
 cd loan-approval-classification
 
@@ -48,12 +51,14 @@ Install the required Python packages:
 
 ```bash
 pip install -r app/requirements.txt
+```
 
-3. Train the Model
+### 3. Train the Model
 Run the train.py script to train the model and save it to the models directory:
 
 ```bash
 python train.py
+```
 This will generate two files in the models directory:
 
 model.pkl: The trained logistic regression model.
@@ -65,6 +70,7 @@ To start the Flask application, run:
 
 ```bash
 python run.py
+```
 The Flask app will start on http://127.0.0.1:5000.
 
 API Usage
@@ -88,22 +94,23 @@ curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -
     "loan_amnt": 10000,
     "loan_int_rate": 12.0
 }'
+```
 Example Response
 ```bash
-json
-Copy
+
 {
     "prediction": 1.0
 }
-prediction: 1.0 indicates the loan is approved, 0.0 indicates the loan is not approved.
+```
+`prediction`: `1.0` indicates the loan is approved, 0.0 indicates the loan is not approved.
 
 Model Training Details
-Data Preprocessing
+### Data Preprocessing
 The dataset is cleaned by removing rows with missing values and filtering out unrealistic values (e.g., age > 90, employment experience > 50 years).
 
 Features like person_education and person_gender are dropped during preprocessing.
 
-Model
+### Model
 A logistic regression model is trained using scikit-learn.
 
 The model is saved as model.pkl, and the feature transformation pipeline is saved as dv.pkl.
