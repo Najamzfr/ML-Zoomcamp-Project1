@@ -4,8 +4,7 @@ This project is a machine learning-based loan approval classification system. It
 
 The project is deployed as a REST API using Flask, allowing users to send loan application data and receive a prediction.
 
-The Dataset used in this project is obtained from  `kaggle` click the link  ->  
-[Data Source](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data)
+The Dataset used in this project is obtained from  `kaggle` click the link  ->  [Data Source](https://www.kaggle.com/datasets/taweilo/loan-approval-classification-data)
 
 ---
 
